@@ -10,6 +10,13 @@ namespace App_01
         static void Main(string[] args)
         {
             Console.WriteLine("Hello there!");
+
+            int edad; //Variable declarada
+            edad = 19; //Variable inicializada 
+
+            int nuevaEdad = 20; //Variable declarada e inicializada
+
+            // Nota: en C# una variable NO puede ser utilizada hasta que se inicialize por primera vez
         }
     }
 }
