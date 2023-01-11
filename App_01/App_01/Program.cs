@@ -69,6 +69,14 @@ namespace App_01
             int temperaturaSarandi;
 
             temperaturaSarandi = (int)temperatura; // Si no 'casteo' el dato temperatura tendré un typeError
+
+            Console.Write("Introduzca el primer número: ");
+            int num1 = int.Parse(Console.ReadLine());
+
+            Console.Write("Introduzca el segundo número: ");
+            int num2 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"La suma es: {num1+num2}");
         }
     }
 }
