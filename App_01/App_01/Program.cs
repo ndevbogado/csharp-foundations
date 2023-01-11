@@ -70,6 +70,7 @@ namespace App_01
 
             temperaturaSarandi = (int)temperatura; // Si no 'casteo' el dato temperatura tendré un typeError
 
+            /*
             Console.Write("Introduzca el primer número: ");
             int num1 = int.Parse(Console.ReadLine());
 
@@ -77,6 +78,23 @@ namespace App_01
             int num2 = int.Parse(Console.ReadLine());
 
             Console.WriteLine($"La suma es: {num1+num2}");
+            */
+
+            const int VALOR = 0;
+            //NOTA: las constantes deben inicializarse al ser declaradas. Deben ser nombradas en mayúsculas
+            // VALOR = 1; esta línea generará un error.
+
+            Console.WriteLine("el valor de la constante es: {0}", VALOR);
+
+            const double PI = 3.14159;
+
+            Console.WriteLine("Introduzca la medida del radio, para calcular el área del círculo: ");
+            double radioCirculo = double.Parse(Console.ReadLine());
+
+            //double area = PI * radioCirculo * radioCirculo;
+            double area = Math.PI * Math.Pow(radioCirculo, 2);
+
+            Console.WriteLine("El área del círculo, con radio = {0}, es Area = {1}", radioCirculo, area);
         }
     }
 }
