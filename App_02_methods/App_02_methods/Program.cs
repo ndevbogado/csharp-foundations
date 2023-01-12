@@ -2,9 +2,10 @@
 {
     internal class Program
     {
+        int varAlcanceDeClase = 0; //Se denominan campos de clase (POO).
         static void Main(string[] args)
         {
-
+            int varAlcanceLocal = 0;
             /*
              
             ESQUEMA DE UN METODO EN C#:
@@ -33,17 +34,29 @@
 
             //Console.WriteLine("Mensaje desde el main.");
 
+            
             Console.Write("Escribe el primer número: ");
             double num1 = double.Parse(Console.ReadLine());
 
             Console.Write("Escribe el segundo número: ");
             double num2 = double.Parse(Console.ReadLine());
 
-
+            /*
             Console.WriteLine(sumaNumeros((int)num1, (int)num2));
             Console.WriteLine(divideNumero(num1, num2));
+            */
+
+            Console.WriteLine(Suma(num1,num2));
+            Console.WriteLine(Suma(num1, num2));
         }
 
+        /*
+         NOTA: sobrecarga de métodos es cuando se llama a más de un método con el mismo nombre, pero
+               estos difieren en el tipo de argumentos, la cantidad de argumentos o el returnType
+        */
+        static int Suma(int operador1, int operador2) => operador1 + operador2;
+        static double Suma(double operador1, double operador2) => operador1 + operador2;
+        
         static void mensajeEnPantalla ()
         {
             Console.WriteLine("Mensaje desde el método mensajeEnPantalla.");
