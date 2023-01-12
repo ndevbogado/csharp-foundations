@@ -48,6 +48,14 @@
 
             Console.WriteLine(Suma(num1,num2));
             Console.WriteLine(Suma(num1, num2));
+            Console.WriteLine(Suma(num1, num2, 3));
+
+            //Console.WriteLine(Multiplicacion(num1,num2));
+        }
+
+        private static double Multiplicacion(double num1, double num2)
+        {
+            return num1 * num2;
         }
 
         /*
@@ -55,8 +63,13 @@
                estos difieren en el tipo de argumentos, la cantidad de argumentos o el returnType
         */
         static int Suma(int operador1, int operador2) => operador1 + operador2;
-        static double Suma(double operador1, double operador2) => operador1 + operador2;
-        
+        static double Suma(double operador1, double operador2, double operador3 = 0) => operador1 + operador2 + operador3;
+        /*
+         NOTA: el tercer operador es opcional, ya que si no se pasa un valor para el operador3 al llamar
+               al método Suma. Los parámetros opcionales deben ir luego de los obligatorios, por 
+               convención. Ante un conflicto de sobrecarga, el compilador de C# utiliza el método que más
+               se adecúe a los parámetros pasados al método en cuestión.
+        */
         static void mensajeEnPantalla ()
         {
             Console.WriteLine("Mensaje desde el método mensajeEnPantalla.");
