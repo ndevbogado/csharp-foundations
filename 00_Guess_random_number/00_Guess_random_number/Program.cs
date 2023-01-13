@@ -41,6 +41,11 @@ namespace _00_Guess_random_number
                 {
                     number = int.Parse(Console.ReadLine());
                 }
+                catch (FormatException e)
+                {
+                    Console.WriteLine($"Invalid number input: {e.Message}");
+                    number = -1;
+                }
                 catch (Exception e) // Catch a generic exception. 'e' is the object's name.
                 {
                     Console.WriteLine($"An error has ocurred: {e.Message}");
