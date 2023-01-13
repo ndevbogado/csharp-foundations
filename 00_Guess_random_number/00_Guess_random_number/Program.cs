@@ -46,6 +46,11 @@ namespace _00_Guess_random_number
                     Console.WriteLine("Invalid interger input!");
                     number = -1;
                 }
+                catch(StackOverflowException e)
+                {
+                    Console.WriteLine("Invalid integer input!");
+                    number = -1;
+                }
             } while (number < 0 || number > 100);
             return number;
         }
