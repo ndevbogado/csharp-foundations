@@ -1,4 +1,6 @@
-﻿namespace _00_Guess_random_number
+﻿using System.Linq.Expressions;
+
+namespace _00_Guess_random_number
 {
     internal class Program
     {
@@ -29,13 +31,21 @@
                 Console.WriteLine($"You have guessed the number in {attempt} attempts");
         }
 
-        static int typeNumber( int attempt)
+        static int typeNumber(int attempt)
         {
             int number;
             do
             {
                 Console.Write($"Please type a number between the required range -- (Attempt {attempt}): ");
-                number = int.Parse(Console.ReadLine());
+                try
+                {
+                    number = int.Parse(Console.ReadLine());
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine("Invalid interger input!");
+                    number = -1;
+                }
             } while (number < 0 || number > 100);
             return number;
         }
