@@ -41,14 +41,9 @@ namespace _00_Guess_random_number
                 {
                     number = int.Parse(Console.ReadLine());
                 }
-                catch (FormatException e)
+                catch (Exception e)
                 {
-                    Console.WriteLine("Invalid interger input!");
-                    number = -1;
-                }
-                catch(OverflowException e)
-                {
-                    Console.WriteLine("Invalid integer input!");
+                    Console.WriteLine($"Invalid input! {e.Message}");
                     number = -1;
                 }
             } while (number < 0 || number > 100);
