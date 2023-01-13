@@ -43,7 +43,7 @@ namespace _00_Guess_random_number
                 }
                 catch (Exception e) // Catch a generic exception. 'e' is the object's name.
                 {
-                    Console.WriteLine($"Invalid input! {e.Message}");
+                    Console.WriteLine($"An error has ocurred: {e.Message}");
                     number = -1;
                 }
             } while (number < 0 || number > 100);
