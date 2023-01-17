@@ -15,9 +15,11 @@
             */
 
             ConversorEuroDolar Moneda = new();
+            ConversorEuroDolar MonedaActualizada = new(5.3);
 
             Moneda.cambiaValorEuro(3);
-            Console.WriteLine(Moneda.Convierte(50));
+            Console.WriteLine($"Cambio: {Moneda.Convierte(50)}$ a {Moneda.GetEuro()} euros.");
+            Console.WriteLine($"Cambio: {MonedaActualizada.Convierte(50)}$ a {MonedaActualizada.GetEuro()} euros.");
         }
     }
 
@@ -35,14 +37,28 @@
 
     class ConversorEuroDolar
     {
-        private double euro = 1.253;
+        public ConversorEuroDolar() // Constructor de la clase ConversorEuroDolar: da el valor inicial del campo de la clase. Estge se llama con el método new al instanciar la clase.
+        {
+            euro = 1.233;
+        }
+        public ConversorEuroDolar(double euro) // Sobrecarga de constructores.
+        {
+            this.euro = euro;
+        }
+
+        private double euro;
 
         public double Convierte (double cantidad)
         {
             return cantidad * euro;
         }
+
+        public double GetEuro() //Método Getter que devuelve información para su lectura (Por convención se agrega el sufijo Get...)
+        {
+            return euro;
+        }
         
-        public void cambiaValorEuro (double nuevoValor)
+        public void cambiaValorEuro (double nuevoValor) // Método de acceso para modificar campos de clase de manera controlada.
         {
             if ( nuevoValor >= 0 )
                 euro = nuevoValor;  
