@@ -17,7 +17,7 @@
             ConversorEuroDolar Moneda = new();
             ConversorEuroDolar MonedaActualizada = new(5.3);
 
-            Moneda.cambiaValorEuro(3);
+            Moneda.SetValorEuro(3);
             Console.WriteLine($"Cambio: {Moneda.Convierte(50)}$ a {Moneda.GetEuro()} euros.");
             Console.WriteLine($"Cambio: {MonedaActualizada.Convierte(50)}$ a {MonedaActualizada.GetEuro()} euros.");
         }
@@ -43,7 +43,7 @@
         }
         public ConversorEuroDolar(double euro) // Sobrecarga de constructores.
         {
-            this.euro = euro;
+            this.euro = euro; // this.euro hace referencia al campo 'euro' de la clase, mientras que solo 'euro' hace referencia al parámetro del método.
         }
 
         private double euro;
@@ -58,7 +58,7 @@
             return euro;
         }
         
-        public void cambiaValorEuro (double nuevoValor) // Método de acceso para modificar campos de clase de manera controlada.
+        public void SetValorEuro (double nuevoValor) // Método Setter de acceso para modificar campos de clase de manera controlada.
         {
             if ( nuevoValor >= 0 )
                 euro = nuevoValor;  
