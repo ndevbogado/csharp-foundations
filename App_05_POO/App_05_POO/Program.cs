@@ -29,12 +29,17 @@
 
         static void realizarTarea()
         {
-            Punto origen = new();
+            Punto origen = new(5,5);
             Punto destino = new(1,2);
+
+            double distancia = origen.DistanciaPunto(destino);
+
+            Console.WriteLine($"La distancia entre los puntos es D = {distancia}");
+            
         }
     }
 
-    class Circulo
+    class Circuloqq
 
     {
         private const double PI = 3.1415; // Propiedad o 'campo de clase' de Circulo. Los identificadores != public son en camelCase (a menos que sean constantes)
