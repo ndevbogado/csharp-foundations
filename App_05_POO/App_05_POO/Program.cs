@@ -14,12 +14,23 @@
             Console.WriteLine(myCircle2.CalculoArea(4));
             */
 
+            /*
             ConversorEuroDolar Moneda = new();
             ConversorEuroDolar MonedaActualizada = new(5.3);
 
             Moneda.SetValorEuro(3);
             Console.WriteLine($"Cambio: {Moneda.Convierte(50)}$ a {Moneda.GetEuro()} euros.");
             Console.WriteLine($"Cambio: {MonedaActualizada.Convierte(50)}$ a {MonedaActualizada.GetEuro()} euros.");
+            */
+
+            realizarTarea();
+
+        }
+
+        static void realizarTarea()
+        {
+            Punto origen = new();
+            Punto destino = new(1,2);
         }
     }
 
