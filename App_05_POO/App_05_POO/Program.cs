@@ -30,7 +30,10 @@
         static void realizarTarea()
         {
             Punto origen = new(5,5);
+            Console.WriteLine($"Instancias de la Clase Punto: {Punto.ContadorDeObjetos()}");
+
             Punto destino = new(1,2);
+            Console.WriteLine($"Instancias de la Clase Punto: {Punto.ContadorDeObjetos()}");
 
             double distancia = origen.DistanciaPunto(destino);
 

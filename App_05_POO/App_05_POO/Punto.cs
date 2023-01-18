@@ -13,14 +13,19 @@ namespace App_05_POO
         {
             this.x = 0;
             this.y = 0;
+
+            contadorDeObjetos++;
         }
         public Punto(int x, int y)
         {
             this.x = x;
             this.y = y;
+
+            contadorDeObjetos++;
         }
 
         private int x, y;
+        private static int contadorDeObjetos = 0; // La directiva 'static' sirve cuando se desea utilizar una funcionalidad de la clase en sí, en vez de un objeto instanciado de esa clase
 
         public double DistanciaPunto(Punto otroPunto)
         {
@@ -32,6 +37,9 @@ namespace App_05_POO
 
             return length;
         }
+
+        public static int ContadorDeObjetos() => contadorDeObjetos;
+        
 
     }
 }
