@@ -1,4 +1,9 @@
-﻿namespace App_05_POO
+﻿/*
+using static System.Math;
+using static System.Console; // Directiva de importación que evita utilizar en nombre de la clase escrita (práctica no recomendada para programas largos)
+*/
+
+namespace App_05_POO
 {
     internal class Program
     {
@@ -23,8 +28,21 @@
             Console.WriteLine($"Cambio: {MonedaActualizada.Convierte(50)}$ a {MonedaActualizada.GetEuro()} euros.");
             */
 
-            realizarTarea();
+            //realizarTarea();
 
+            //WriteLine(Pow(3,4));
+
+            var miVariable = new { Name="Nahuel D. Bogado", Age=24 }; //Clase anónima
+            Console.WriteLine(miVariable.Name);
+            var otraVariable = new { Name = "XD", Age=0}; //Otra clase anónima que el compilador la identifica como la misma que la de arriba, ya que se fija en la cantidad de campos, del tipo y orden de construcción.
+
+            /*
+                NOTA: Las clases anónimas tienen cuatro condiciónes para ser utilizadas sin errores:
+                    - Solo pueden contener campos públicos.
+                    - Todos los campos tienen que ser iniciados.
+                    - Los cmapos no pueden ser static.
+                    - No se pueden definir métodos.
+             */
         }
 
         static void realizarTarea()
@@ -33,7 +51,7 @@
             Console.WriteLine($"Instancias de la Clase Punto: {Punto.ContadorDeObjetos()}");
 
             Punto destino = new(1,2);
-            Console.WriteLine($"Instancias de la Clase Punto: {Punto.ContadorDeObjetos()}");
+            Console.WriteLine($"Instancias de la Clase Punto: {Punto.ContadorDeObjetos()}"); // Sentencia que llama a un método static de la clase Punto (funcionalidad independiente de la instancia de clase [objeto] que utiliza directamente TODA la clase) 
 
             double distancia = origen.DistanciaPunto(destino);
 
