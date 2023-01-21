@@ -40,8 +40,63 @@
             }
             */
 
+            /*
             foreach (var variableForeach in empleados)
                 Console.WriteLine($"Name: {variableForeach.GetName()} - Age: {variableForeach.GetAge()}");
+            */
+
+            /*
+            int[] numeros = new int[4];
+
+            numeros[0] = 1;
+            numeros[1] = 22;
+            numeros[2] = 13;
+            numeros[3] = 43;
+
+            ProcesaDatos(numeros); // Los arrays pasados como parámetros se comportan como referencias de objetos. Si se modifican sus valores dentro de un método, se modifican para todo el programa (pointers)
+            foreach( var datos in numeros)
+                Console.WriteLine(datos);
+
+            int numero = 0;
+            Console.WriteLine("\n"+numero);
+            ProcesaNumeros(numero); // el número pasado a este método no es una referencia al objeto original, por lo que no se modifica el valor de este ya que lo que se le pasa al método es una copia del valor de este.
+            Console.WriteLine(numero);
+            */
+
+            int[] arrayElementos = LeerDatos();
+
+            foreach(var arr in arrayElementos)
+                Console.WriteLine(arr);
+        }
+
+        static void ProcesaDatos (int[] datos) 
+        {
+            for (int i =0; i < datos.Length; i++)
+            {
+                datos[i] += 10;
+            }
+        }
+
+        static int[] LeerDatos ()
+        {
+            Console.Write("Cuántos elementos quieres que tenga el array? ");
+            int respuesta = int.Parse(Console.ReadLine());
+
+            int[] datos = new int[respuesta];
+
+            for (int i = 0; i < datos.Length; i ++)
+            {
+                Console.Write($"Introduce el dato de la posición {i}: ");
+                respuesta = int.Parse(Console.ReadLine());
+                datos[i] = respuesta;
+            }
+
+            return datos;
+        }
+
+        static void ProcesaNumeros (int numero)
+        {
+            numero += 10;
         }
 
         class Empleado 
