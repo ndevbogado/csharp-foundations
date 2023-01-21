@@ -8,9 +8,22 @@
             Humano Macy = new("Macy");
             Gorila Kong = new("Kong");
 
+            /*
             Kong.Respirar();
             Console.WriteLine(Kong.getNombre());
-        }
+            */
+            Mamifero animal = new Caballo("Juaan"); // Aplico principio de sustitución. 'Un caballo es siempre un mamífero?' Se puede almacenar un objeto caballo dentro de un objeto mamífero.
+
+            //Caballo[] almacenCaballo = new Caballo[3];
+            Mamifero[] almacen = new Mamifero[3]; 
+            almacen[0] = Juan;
+            almacen[1] = Macy;
+            almacen[2] = Kong;
+
+            // Con el principio de sustitución gano la capacidad de agrupar y almacenar distintos tipos de objetos en un mismo array, pero pierdo la capacidad de llamar a los métodos propios de cada clase.
+
+
+         }
 
         class Mamifero
         {
