@@ -20,6 +20,12 @@
             almacen[1] = Macy;
             almacen[2] = Kong;
 
+            foreach (Mamifero mamifero in almacen)
+            {
+                Console.Write(mamifero.getNombre()+" ");
+                mamifero.Pensar();
+            }
+
             // Con el principio de sustitución gano la capacidad de agrupar y almacenar distintos tipos de objetos en un mismo array, pero pierdo la capacidad de llamar a los métodos propios de cada clase.
 
 
@@ -32,6 +38,7 @@
             {
                 Console.WriteLine("Respirando");
             }
+            public virtual void Pensar() => Console.WriteLine("Pensamiento básico instintivo.");
 
             public void Cuidar()
             {
@@ -58,6 +65,7 @@
         class Humano : Mamifero
         {
             public Humano(String nombreHumano) : base(nombreHumano) { }
+            public override void Pensar() => Console.WriteLine("Soy capaz de realizar pensamientos abstractos xdxdxd.");
             public void Destruir()
             {
                 Console.WriteLine("Destrucción del mundo inminente xdxdx");
@@ -71,6 +79,8 @@
             {
                 Console.WriteLine("Trepando");
             }
+
+            public override void Pensar() => Console.WriteLine("Pensamiento instintivo avanzado.");
         }
     }
 }
