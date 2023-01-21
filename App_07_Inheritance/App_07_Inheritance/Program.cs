@@ -23,8 +23,10 @@
             foreach (Mamifero mamifero in almacen)
             {
                 Console.Write(mamifero.getNombre()+" ");
-                mamifero.Pensar();
+                mamifero.Pensar(); // Polimorfismo: código se comporta de distintas formas según el contexto. 
             }
+
+            
 
             // Con el principio de sustitución gano la capacidad de agrupar y almacenar distintos tipos de objetos en un mismo array, pero pierdo la capacidad de llamar a los métodos propios de cada clase.
 
