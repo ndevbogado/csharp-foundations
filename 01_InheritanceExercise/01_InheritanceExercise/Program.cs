@@ -24,10 +24,6 @@
                 Console.WriteLine();
             }
         }
-
-        class Plane : Vehicle
-        {
-            public override void Drive() => Console.WriteLine("Flying...");
-        } 
+ 
     }
 }
