@@ -28,13 +28,6 @@
         class Plane : Vehicle
         {
             public override void Drive() => Console.WriteLine("Flying...");
-        }
-
-        class Car : Vehicle
-        {
-            public override void Drive() => Console.WriteLine("Runnig...");
-        }
-
- 
+        } 
     }
 }
