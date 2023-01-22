@@ -9,6 +9,8 @@ namespace _01_InheritanceExercise
     class Car : Vehicle
     {
         public override void Drive() => Console.WriteLine("Runnig...");
+
+        public void Accelerate() => Console.WriteLine("Accelerating to max speed.");
     }
 
 }
