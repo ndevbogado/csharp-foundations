@@ -74,6 +74,15 @@
             }
         }
 
+        class Ballena: Mamifero
+        {
+            public Ballena(String nombreBallena) :base(nombreBallena)
+            {
+
+            }
+
+            public void Nadar() => Console.WriteLine("Soy capaz de nadar");
+        }
         class Gorila: Mamifero
         {
             public Gorila(String nombreGorila) : base(nombreGorila) { }
