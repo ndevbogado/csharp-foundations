@@ -9,5 +9,9 @@ namespace _01_InheritanceExercise
     class Plane : Vehicle
     {
         public override void Drive() => Console.WriteLine("Flying...");
+
+        public void Land() => Console.WriteLine("Landing...");
+
+        public void TakeOff() => Console.WriteLine("Taking off..");
     }
 }
