@@ -5,6 +5,8 @@
         static void Main(string[] args)
         {
             Caballo Juan = new("Juan");
+            IMamiferosTerrestres IJuan = Juan;
+            ISaltar ISaltarJuan = Juan;
             Humano Macy = new("Macy");
             Gorila Kong = new("Kong");
 
@@ -34,7 +36,8 @@
 
             moby.Nadar();
 
-            Console.WriteLine($"Número de patas del caballo: {Juan.NumeroPatas()}");
+            Console.WriteLine($"Número de patas del caballo: {IJuan.NumeroPatas()}");
+            Console.WriteLine($"Número de patas con las que salta el caballo: {ISaltarJuan.NumeroPatas()}");
 
          }
 
@@ -48,6 +51,11 @@
             string TipoDeporte(string deporte);
             bool EsOlimpico(string respuesta);
 
+        }
+
+        interface ISaltar
+        {
+            int NumeroPatas();
         }
         class Mamifero
         {
@@ -68,7 +76,7 @@
             private String nombreSerVivo;
         }
 
-        class Caballo : Mamifero, IMamiferosTerrestres, IAnimalesDeCarrerra // En C#, las interfaces van después del nombre de la clase.
+        class Caballo : Mamifero, IMamiferosTerrestres, IAnimalesDeCarrerra, ISaltar // En C#, las interfaces van después del nombre de la clase.
         {
             public Caballo(String nombreCaballo) : base(nombreCaballo) 
             {
@@ -78,10 +86,9 @@
             {
                 Console.WriteLine("Galopando");
             }
-            public int NumeroPatas()
-            {
-                return 4;
-            }
+            int IMamiferosTerrestres.NumeroPatas() => 4;
+
+            int ISaltar.NumeroPatas() => 2;
 
             public string TipoDeporte(string deporte) => deporte;
 
