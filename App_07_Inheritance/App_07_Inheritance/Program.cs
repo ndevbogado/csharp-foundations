@@ -26,13 +26,22 @@
                 mamifero.Pensar(); // Polimorfismo: código se comporta de distintas formas según el contexto. 
             }
 
-            
+
 
             // Con el principio de sustitución gano la capacidad de agrupar y almacenar distintos tipos de objetos en un mismo array, pero pierdo la capacidad de llamar a los métodos propios de cada clase.
 
+            Ballena moby = new("Moby Dick");
+
+            moby.Nadar();
+
+            Console.WriteLine($"Número de patas del caballo: {Juan.NumeroPatas()}");
 
          }
 
+        interface IMamiferosTerrestres // Por convención, las interfaces se deben escribir con una 'I' al inicio de su nombre.
+        {
+            int NumeroPatas();
+        }
         class Mamifero
         {
             public Mamifero(String nombre) => this.nombreSerVivo = nombre;
@@ -52,7 +61,7 @@
             private String nombreSerVivo;
         }
 
-        class Caballo : Mamifero
+        class Caballo : Mamifero, IMamiferosTerrestres // En C#, las interfaces van después del nombre de la clase.
         {
             public Caballo(String nombreCaballo) : base(nombreCaballo) 
             {
@@ -61,6 +70,10 @@
             public void Galopar()
             {
                 Console.WriteLine("Galopando");
+            }
+            public int NumeroPatas()
+            {
+                return 4;
             }
         }
 
@@ -83,7 +96,7 @@
 
             public void Nadar() => Console.WriteLine("Soy capaz de nadar");
         }
-        class Gorila: Mamifero
+        class Gorila: Mamifero, IMamiferosTerrestres
         {
             public Gorila(String nombreGorila) : base(nombreGorila) { }
             public void Trepar()
@@ -92,6 +105,11 @@
             }
 
             public override void Pensar() => Console.WriteLine("Pensamiento instintivo avanzado.");
+
+            public int NumeroPatas()
+            {
+                return 2;
+            }
         }
     }
 }
