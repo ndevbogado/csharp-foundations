@@ -42,6 +42,13 @@
         {
             int NumeroPatas();
         }
+
+        interface IAnimalesDeCarrerra
+        {
+            string TipoDeporte(string deporte);
+            bool EsOlimpico(string respuesta);
+
+        }
         class Mamifero
         {
             public Mamifero(String nombre) => this.nombreSerVivo = nombre;
@@ -61,7 +68,7 @@
             private String nombreSerVivo;
         }
 
-        class Caballo : Mamifero, IMamiferosTerrestres // En C#, las interfaces van después del nombre de la clase.
+        class Caballo : Mamifero, IMamiferosTerrestres, IAnimalesDeCarrerra // En C#, las interfaces van después del nombre de la clase.
         {
             public Caballo(String nombreCaballo) : base(nombreCaballo) 
             {
@@ -74,6 +81,16 @@
             public int NumeroPatas()
             {
                 return 4;
+            }
+
+            public string TipoDeporte(string deporte) => deporte;
+
+            public bool EsOlimpico(string respuesta)
+            {
+                if (respuesta == "Y" || respuesta == "yes")
+                    return true;
+                else
+                    return false;
             }
         }
 
