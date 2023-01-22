@@ -35,14 +35,6 @@
             public override void Drive() => Console.WriteLine("Runnig...");
         }
 
-        class Vehicle
-        {
-            public void StartEngine() => Console.WriteLine("Engine starting protocol...");
-            
-            public void StopEngine() => Console.WriteLine("Engine stopping now.");
-
-            public virtual void Drive() => Console.WriteLine("Starting protocol...");
-
-        }
+ 
     }
 }
