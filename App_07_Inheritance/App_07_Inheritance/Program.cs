@@ -127,7 +127,7 @@
         class Humano : Mamifero
         {
             public Humano(String nombreHumano) : base(nombreHumano) { }
-            public override void Pensar() => Console.WriteLine("Soy capaz de realizar pensamientos abstractos xdxdxd.");
+            public sealed override void Pensar() => Console.WriteLine("Soy capaz de realizar pensamientos abstractos xdxdxd.");
             public void Destruir()
             {
                 Console.WriteLine("Destrucción del mundo inminente xdxdx");
@@ -143,7 +143,7 @@
 
             public void Nadar() => Console.WriteLine("Soy capaz de nadar");
         }
-        class Gorila: Mamifero, IMamiferosTerrestres
+        sealed class Gorila: Mamifero, IMamiferosTerrestres
         {
             public Gorila(String nombreGorila) : base(nombreGorila) { }
             public void Trepar()
@@ -156,6 +156,27 @@
             public int NumeroPatas()
             {
                 return 2;
+            }
+        }
+
+        class Mono 
+        {
+            public Mono(string Nombre) 
+            {
+                Console.WriteLine();
+            }
+        }
+
+        class Adolecente : Humano
+        {
+            public Adolecente(string nombre):base(nombre)
+            {
+
+            }
+
+            public void Pensar()
+            {
+                Console.WriteLine("XDDDD");
             }
         }
     }
