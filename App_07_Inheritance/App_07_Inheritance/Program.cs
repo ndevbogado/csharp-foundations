@@ -3,17 +3,20 @@
     internal class Program
     {
         static void Main(string[] args)
+            
         {
+
+            /*
             Caballo Juan = new("Juan");
             IMamiferosTerrestres IJuan = Juan;
             ISaltar ISaltarJuan = Juan;
             Humano Macy = new("Macy");
             Gorila Kong = new("Kong");
 
-            /*
-            Kong.Respirar();
-            Console.WriteLine(Kong.getNombre());
-            */
+            
+            //Kong.Respirar();
+            //Console.WriteLine(Kong.getNombre());
+            
             Mamifero animal = new Caballo("Juaan"); // Aplico principio de sustitución. 'Un caballo es siempre un mamífero?' Se puede almacenar un objeto caballo dentro de un objeto mamífero.
 
             //Caballo[] almacenCaballo = new Caballo[3];
@@ -24,7 +27,7 @@
 
             foreach (Mamifero mamifero in almacen)
             {
-                Console.Write(mamifero.getNombre()+" ");
+                Console.Write(mamifero.GetNombre()+" ");
                 mamifero.Pensar(); // Polimorfismo: código se comporta de distintas formas según el contexto. 
             }
 
@@ -38,8 +41,15 @@
 
             Console.WriteLine($"Número de patas del caballo: {IJuan.NumeroPatas()}");
             Console.WriteLine($"Número de patas con las que salta el caballo: {ISaltarJuan.NumeroPatas()}");
+            */
+            Lagartija lagartoJuancho = new("Lagarto Juancho"); // LA DIFERENCIA NOTABLE ENTRE INTERFAZ Y CLASE ABSTRACTA ES QUE EN UNA INTERFAZ NO SE PUEDEN DESARROLLAR MÉTODOS, MIENTRAS QUE EN UNA CLASE ABSTRACTA SÍ (SIEMPRE Y CUANDO ESTA NMO ESTÉ ESPECIFICADA COMO ABSTRACTA).
 
+            lagartoJuancho.Respirar();
+            Console.WriteLine(lagartoJuancho.GetNombre());
+
+            
          }
+
 
         interface IMamiferosTerrestres // Por convención, las interfaces se deben escribir con una 'I' al inicio de su nombre.
         {
@@ -57,13 +67,16 @@
         {
             int NumeroPatas();
         }
-        class Mamifero
+
+        abstract class Animales
+        { 
+            public void Respirar() => Console.WriteLine("Respirando");
+            public abstract string GetNombre();
+        }
+        class Mamifero : Animales
         {
             public Mamifero(String nombre) => this.nombreSerVivo = nombre;
-            public void Respirar()
-            {
-                Console.WriteLine("Respirando");
-            }
+       
             public virtual void Pensar() => Console.WriteLine("Pensamiento básico instintivo.");
 
             public void Cuidar()
@@ -71,9 +84,19 @@
                 Console.WriteLine("Cuido de mis crías");
             }
 
-            public String getNombre() => nombreSerVivo;
+            public override string GetNombre() => nombreSerVivo;
 
             private String nombreSerVivo;
+        }
+
+        class Lagartija : Animales
+        {
+            public Lagartija (string nombreReptil)
+            {
+                this.nombreReptil = nombreReptil;
+            }
+            public override string GetNombre() => nombreReptil;
+            private string nombreReptil;
         }
 
         class Caballo : Mamifero, IMamiferosTerrestres, IAnimalesDeCarrerra, ISaltar // En C#, las interfaces van después del nombre de la clase.
