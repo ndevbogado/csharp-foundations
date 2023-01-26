@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            almacenObjetos archivo = new(5);
+            almacenObjetos <Empleado> archivo = new(5);
 
             /*
             archivo.agregar("Nahuel");
@@ -21,28 +21,28 @@
             archivo.agregar(new Empleado(10));
 
             //string nombrePersona = (string)archivo.getElemento(4); // No salta en vs , pero da un error en tiempo de ejecución debido al casting
-            Empleado persona = (Empleado)archivo.getElemento(4);
+            Empleado persona = archivo.getElemento(4);
             Console.WriteLine(persona.getSalario());
 
 
          
         }
 
-        class almacenObjetos
+        class almacenObjetos <T>
         {
             public almacenObjetos(int z)
             {
-                datosElemento = new object[z];
+                datosElemento = new T[z];
             }
 
-            public void agregar (Object obj)
+            public void agregar (T obj)
             {
                 datosElemento[i] = obj;
                 i++;
             }
-            public Object getElemento(int z) => datosElemento[z];
+            public T getElemento(int z) => datosElemento[z];
 
-            private Object[] datosElemento;
+            private T[] datosElemento;
             private int i = 0;
         }
 
