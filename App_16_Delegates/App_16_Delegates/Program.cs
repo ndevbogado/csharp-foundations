@@ -1,34 +1,35 @@
-﻿namespace App_16_Delegates
+﻿using System.ComponentModel;
+
+namespace App_16_Delegates
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            string mensaje = "xd";
-            ObjetoDelegado ElDelegado = new(MensajeBienvenida.SaludoBienvenida); //Creación del objeto com oreferencia de Delegado para la llamada del método perteneceiente a la clase llamada
-            ElDelegado(mensaje); //Intancia del delegado para llamar al método
 
-            ElDelegado = new(MensajeDespedida.SaludoDespedida);
-            ElDelegado(mensaje);
+            //TODO: Create a delegate predicate to find prime numbers
+            List <int>  numberList = new ();
+            numberList.AddRange(new int[] {1,2,3,4,5,5,6,2,7,8,9,9,1,4,34,534,635,23,2 });
+            //Declaramos delegado predicado
+
+            Predicate<int> DelegadoPredicado = new(IsEven);
+
+            List<int> evenList = new ();
+            evenList = numberList.FindAll(DelegadoPredicado);
+
+            foreach (int element in evenList)
+                Console.WriteLine(element);
         }
 
-        delegate void ObjetoDelegado(string msj); 
-
-        class MensajeBienvenida
+        static bool IsEven(int number)
         {
-            public static void SaludoBienvenida(string msj)
-            {
-                Console.WriteLine("Hello There!: {0}", msj);
-            }
+            if (number % 2 == 0)
+                return true;
+            else
+                return false;
         }
 
-        class MensajeDespedida
-        {
-            public static void SaludoDespedida(string msj)
-            {
-                Console.WriteLine("NOS VIMOS TIRRI!: {0}", msj);
-            }
-        }
+        
 
     }
 }
