@@ -6,8 +6,8 @@ namespace App_17_Regular_Expressions
     {
         static void Main(string[] args)
         {
-            string text = "Mi numbre es Nahu D. Bog y mi número de tel es (+55) 123-1234-2134 y mi código postal es 1872";
-            string pattern = "[m|M]i";
+            string text = "https://www.github.com/ndevbogado";
+            string pattern = @"https?://(www.)?.*";
             Regex rx = new(pattern);
             MatchCollection matches = rx.Matches(text);
 
